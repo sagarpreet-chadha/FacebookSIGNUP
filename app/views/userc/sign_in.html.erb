@@ -1,0 +1,17 @@
+<h3>User Sign In Form :</h3>
+
+<%= form_tag create_session_path , method: :post do %>
+
+	<%= label_tag :email %>
+	<%=  text_field_tag :email %>
+
+	<br>
+		<%= label_tag :password %>
+	<%=  text_field_tag :password %>
+
+	<br>
+
+	<%= submit_tag "Sign In" %>
+
+<% end %>
+

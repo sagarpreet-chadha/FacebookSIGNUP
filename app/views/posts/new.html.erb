@@ -1,0 +1,13 @@
+<h1> POST YOUR STATUS : </h1>
+<br><br><br>
+<%= form_for @post , url: url_for(controller: "posts" , action: "create") do |f| %>
+	<%= f.label :title %> &nbsp;&nbsp; &nbsp; &nbsp;  
+	<%= f.text_field :title %>
+	<br><br><br>
+	<%= f.label :content %>&nbsp; 
+	<%= f.text_field :content %>
+	<br><br><br>
+	&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  <%= f.submit %>
+<%end%>
+<br><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <b><%= link_to "BACK" , "/posts" , method: 'get' %></b>

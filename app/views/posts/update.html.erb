@@ -1,0 +1,15 @@
+<h1> UPDATE YOUR STATUS : </h1>
+<br><br><br>
+
+<%= @p.id %>
+<%= form_for @p , :url => {:action => 'edit', :id => @p.id} do |f| %>
+	<%= f.label :title %> &nbsp;&nbsp; &nbsp; &nbsp;  
+	<%= f.text_field :title %>
+	<br><br><br>
+	<%= f.label :content %>&nbsp; 
+	<%= f.text_field :content %>
+	<br><br><br>
+	&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  <%= f.submit %>
+<%end%>
+<br><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <b><%= link_to "BACK" , "/posts" , method: 'get' %></b>

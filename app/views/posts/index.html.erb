@@ -1,0 +1,31 @@
+ <h1>Posts :</h1>
+<h2> -Powered by Sagarpreet </h2>
+
+
+
+
+<h4>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <b><%= link_to "CREATE POST" , "/posts/new" , method: 'get' %></b> </h4>
+
+
+<h4>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <b><%= link_to " LOG OUT" , "/posts/new" , method: 'get' %></b> </h4>
+
+
+<%= USER SIGNED IN: @user_signed_in.email %>
+
+<br><br>
+<p> --------- </p>
+
+<% @posts.each do |i| %>
+
+<b>Title : </b> <%=   i.title  %> 
+
+<p><%=  i.content  %> </p> 
+<br>
+ <b><%= link_to "UPDATE" , "/posts/#{i.id}" , method: 'get' %></b>   &nbsp;&nbsp;&nbsp; 
+ <b><%= link_to "DELETE" , "/posts/#{i.id}" , method: 'delete' , :data => {:confirm => "You Sure?"} %></b>
+
+<p> --------- </p>
+<% end %>
+
+
+

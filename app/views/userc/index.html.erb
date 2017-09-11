@@ -1,0 +1,50 @@
+<h1>Displaying Records : </h1>
+
+<h3>Userc#index</h3>
+<p>Find me in app/views/userc/index.html.erb</p>
+
+
+
+<h4>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <b><%= link_to " LOG OUT" , user_sign_out_path , method: 'delete' %></b> </h4>
+
+<% if !@user_signed_in.nil? %>
+<h1 style="color: red">SIGNED IN  USER : <%=  @user_signed_in.email %>
+	<br>
+	&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <%=  @user_signed_in.name %>
+</h1>
+<% else %>
+	<b><p><%= link_to " SIGN_IN" , "userc/signin" , method: 'get' %></p></b> 
+<% end %>
+<br>
+<br>
+<!--
+<%= @dbname %>
+<%= @dbage %>
+<%= @dbemail %> 
+-->
+
+<% @users.each do |i| %>
+
+
+
+<%=    i.name  %>
+<br>
+<%=    i.age  %>
+<br>
+<%=    i.email  %>
+<br>
+<p> --------- </p>
+<%    end %>
+
+
+<!--
+<% x=5 %>
+
+<% arr=[1,2,3] %>
+<% arr.each do |i| %>
+<%= i %>
+<% end %>
+-->
+	
+
+

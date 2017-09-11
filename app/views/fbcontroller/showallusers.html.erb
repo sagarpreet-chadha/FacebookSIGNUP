@@ -1,0 +1,33 @@
+<h1 style="color: BLUE">ALL USERS IN DATABASE :</h1>
+<h2> -Powered by Sagarpreet </h2>
+
+<b><%= link_to "LOGOUT" , "/fbcontroller/" , method: 'get' , :data => {:confirm => "You Sure?"} %></b>
+
+
+<br><br>
+<p> --------- </p>
+
+<% @all.each do |i| %>
+
+<b>First Name : </b> <%=   i.firstname  %> 
+<br>
+<b>Last Name : </b> <%=   i.lastname  %> 
+<br>
+<b>Email: </b> <%=   i.email %>
+<br>
+<b>Password: </b> <%=   i.password %>
+<br>
+<b>Gender: </b> <%  if i.gender=="on"  %>
+				<%= "MALE"     %>
+				<%   else %>
+				<%    "FEMALE" %>
+				<% end %>
+<br>
+ <b><%= link_to "UPDATE" , "" , method: 'get' %></b>   &nbsp;&nbsp;&nbsp; 
+ <b><%= link_to "DELETE" , "/fbcontroller/#{i.id}" , method: 'delete' , :data => {:confirm => "You Sure?"} %></b>
+
+<p> --------- </p>
+<% end %>
+
+
+
